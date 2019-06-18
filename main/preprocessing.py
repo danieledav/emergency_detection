@@ -64,3 +64,15 @@ def removeDigits(tweet_message):
 	remove_digits = str.maketrans('', '', string.digits)
 	clean_message = tweet_message.translate(remove_digits)
 	return clean_message
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 91d54380110b1f29b868bf40be503bb7ea2aa333
