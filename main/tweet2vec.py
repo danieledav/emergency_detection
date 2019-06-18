@@ -1,38 +1,50 @@
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from import_csv import import_file_csv_itaCresci_SWDM15toLists
+from import_csv import importCsv
 
 #List of text documents
-#text = ["Tornare in camera e trovare l'armadio aperto",
-#        "Altra scossa forte di terremoto. #terremoto",
-#        "e dire che non ci tenevo a fare la notte bianca, #terremoto"]
+text = ["Tornare in camera e trovare l'armadio aperto",
+        "Altra scossa forte di terremoto. #terremoto",
+        "e dire che non ci tenevo a fare la notte bianca, #terremoto"]
 
-text = import_file_csv_itaCresci_SWDM15toLists('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
-
-#Create the vocabulary
-
-vec = CountVectorizer()
-vec.fit(text)
-
-print(vec.vocabulary_)
-
-#Trasform a document as a vector in the vocabulary space
-
-vector = vec.transform(text)
+#text = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
 
 
-print(vector.shape)
-print(type(vector))
-print(vector.toarray())
+def text2vector(text_p):
 
-#TF-IDF version
-ifidf = TfidfVectorizer()
-ifidf.fit(text)
+        #Create the vocabulary
 
-print(ifidf.vocabulary_)
-print(ifidf.idf_)
+        vec = CountVectorizer()
+        vec.fit(text_p)
 
-vector2 = ifidf.transform(text)
+        print(vec.vocabulary_)
 
-print(vector2.shape)
-print(vector2.toarray())
+        #Trasform a document as a vector in the vocabulary space
+
+        vector = vec.transform(text_p)
+
+        print(vector.shape)
+        print(type(vector))
+        print(vector.toarray())
+
+
+def text2tfidf(text_p):
+
+        #TF-IDF version
+        ifidf = TfidfVectorizer()
+        ifidf.fit(text_p)
+
+        print(ifidf.vocabulary_)
+        print(ifidf.idf_)
+
+        vector = ifidf.transform(text_p)
+
+        print(vector.shape)
+        print(vector.toarray())
+
+
+text2vector(text)
+
+
+text2tfidf(text)
+
 
