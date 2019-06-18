@@ -55,7 +55,7 @@ def removeStopWords(tokens):
 
 def doStemming(tokens):
 	ita_stemmer = nltk.stem.snowball.ItalianStemmer()
-	for i in range(0, len(tokens):
+	for i in range(0, len(tokens)):
 		tokens[i] = ita_stemmer.stem(tokens[i])
 	tweet_message = " ".join(str(x) for x in tokens)
 	return tweet_message
