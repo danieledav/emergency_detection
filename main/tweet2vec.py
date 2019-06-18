@@ -1,9 +1,12 @@
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from import_csv import import_file_csv_itaCresci_SWDM15toLists
 
 #List of text documents
-text = ["Tornare in camera e trovare l'armadio aperto",
-        "Altra scossa forte di terremoto. #terremoto",
-        "e dire che non ci tenevo a fare la notte bianca, #terremoto"]
+#text = ["Tornare in camera e trovare l'armadio aperto",
+#        "Altra scossa forte di terremoto. #terremoto",
+#        "e dire che non ci tenevo a fare la notte bianca, #terremoto"]
+
+text = import_file_csv_itaCresci_SWDM15toLists('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
 
 #Create the vocabulary
 
