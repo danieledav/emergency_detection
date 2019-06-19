@@ -34,12 +34,11 @@ def text2tfidf(text_p):
         ifidf.fit(text_p)
 
         print(ifidf.vocabulary_)
-        print(ifidf.idf_)
 
         vector = ifidf.transform(text_p)
 
-        print(vector.shape)
-        print(vector.toarray())
+        return vector.toarray()
+
 
 
 
