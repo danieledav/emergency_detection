@@ -1,13 +1,12 @@
 import nltk
-import csv
 import string
 import re
 from nltk import pos_tag
 from nltk.corpus import stopwords
+#nltk.download('stopwords')
 from nltk.tokenize import word_tokenize, RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize
-from import_csv import importCsv
 
 '''
 the prepocessing is composed by:
@@ -18,28 +17,18 @@ the prepocessing is composed by:
 	- extra spaces elimination
 '''
 
-tweet_message = ["Tornare in camera e trovare l'armadio aperto",
-				 "Altra scossa forte di terremoto. #terremoto",
-				 "e dire che non ci tenevo a fare la notte bianca, #terremoto"]
+
 
 #main function
 def doPreprocessing(tweet_message):
-	print("Original tweet: " + str(tweet_message))
 
 	tweet_message = removePunct(tweet_message)
-	print("Removed punctuaction: " + str(tweet_message))
 
 	tweet_message = removeStopWords(tweet_message)
-	print("Removed stopwords: " + str(tweet_message))
 
 	tweet_message = doStemming(tweet_message)
-	print("Stemming: " + str(tweet_message))
-
-	#tweet_message = doLemmatization(tweet_message)
-	#print("Lemmatization: " + str(tweet_message))
 
 	tweet_message = removeDigits(tweet_message)
-	print("Removed Digits: " + tweet_message)
 
 	#remove double spaces and unwanted spaces
 	return re.sub(' +',' ',tweet_message).strip()
@@ -70,4 +59,3 @@ def removeDigits(tweet_message):
 	clean_message = tweet_message.translate(remove_digits)
 	return clean_message
 
-doPreprocessing(tweet_message)

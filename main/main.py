@@ -1,10 +1,14 @@
 from import_csv import importCsv
-from tweet2vec import text2vector, text2tfidf
+from tweet2vec import *
+from preprocessing import *
 
-text = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
+data = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
 
-print(text)
+for x in range(len(data[1])):
 
-text2vector(text)
+    parsed = doPreprocessing(data[1][x])
+    data[1][x] = parsed
 
-text2tfidf(text)
+print(data[1])
+
+text2tfidf(data[1])
