@@ -8,41 +8,61 @@ from preprocessing import *
 
 data = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
 
-for x in range(len(data[1])):
+#for x in range(len(data[1])):
+#
+#    parsed = doPreprocessing(data[1][x])
+#    data[1][x] = parsed
 
-    parsed = doPreprocessing(data[1][x])
-    data[1][x] = parsed
-
-print(data[1])
+#print(data[1])
 
 vectors = text2tfidf(data[1])
 
 print(vectors)
+print("vectors[0]:")
+print(vectors[0])
 
-cluster = []
-clusters = []
-
-cluster.append(vectors[0])
-clusters.append(cluster)
 tresh = 0.8
 centroids = []
+cluster = []
+clusters = []
+vec = []
+
+cluster = vectors[0]
+clusters.append(cluster)
+
+print("cluster:")
+print(cluster)
+print("clusters:")
+print(clusters)
+
 centroids.append(vectors[0])
 cluster_centroid = 0
 
+print("centroids:")
+print(centroids)
 
 #Prendiamo singolo vettore
 for x in range(0, len(vectors)):
     max_distance = 0
+    cluster_centroid = 0
+    
+
     for y in range(0, len(centroids)):
         distance = 1 - cosine(vectors[x], centroids[y])
+        print("distance:")
+        print(distance)
+
         if (distance > max_distance):
             max_distance = distance
             cluster_centroid = y
+            print("custer_centroid:")
+            print(cluster_centroid)
 
     if (max_distance > tresh):
         print("lunghezza cluster prima")
         print(len(clusters))
-        cluster.append(vectors[x])
+        vec.append(vectors[x])
+        cluster.append(vec)
         clusters[cluster_centroid].append(cluster)
         print("lunghezza cluster dopo")
         print(len(clusters))
