@@ -6,8 +6,10 @@ from import_csv import importCsv
 from tweet2vec import *
 from preprocessing import *
 
+# Importing my dataset from the file
 data = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
 
+# Preprocessing each tweet
 for x in range(len(data[1])):
 
     parsed = doPreprocessing(data[1][x])
@@ -15,34 +17,30 @@ for x in range(len(data[1])):
 
 print(data[1])
 
+# Rapresentig my tweets as vectors (TF-IDF weight)
 vectors = text2tfidf(data[1])
-#vectors = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1], [8.2, 0, 0], [0, 2, 0]])
 
-print(vectors)
-print("vectors[0]:")
-print(vectors[0])
+# Test vectors
+# vectors = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1], [8.2, 0, 0], [0, 2, 0]])
 
-tresh = 0.015
-centroids = np.array([vectors[0]])
-cluster = np.array([vectors[0]])
+# Creating parameter vars and clusters container
 clusters = []
 
+tresh = 0.005   # Setting my treshold
+cluster_centroid = 0
+centroids = np.array([vectors[0]])
+cluster = np.array([vectors[0]])
 clusters.append(cluster)
-vec = np.array([])
 
-
+# Printing init parameter values
 print("Init cluster:")
 print(cluster)
 print("Init clusters:")
 print(clusters)
-
-cluster_centroid = 0
-
 print("Init centroids:")
 print(centroids)
 
-#Prendiamo singolo vettore
-
+# For each vector
 for x in range(1, len(vectors)):
     if (x%100 == 0):
         print(x)
@@ -50,65 +48,38 @@ for x in range(1, len(vectors)):
     max_distance = 0
     cluster_centroid = 0
 
-
+    # Computing distance of the vector from each centroid
     for y in range(0, len(centroids)):
         distance = 0
         distance = 1 - cosine(vectors[x], centroids[y])
-        #print("distance:")
-        #print(distance)
 
+        # Getting the max distance
         if (distance > max_distance):
             max_distance = distance
             cluster_centroid = y
-            #print("custer_centroid:")
-            #print(cluster_centroid)
 
-    #print("max distance:")
-    #print(max_distance)
+    # Assigning a vector to a cluster if enough close and recomputing the new cluster centroid
     if (max_distance > tresh):
-        #print("Clusters prima:")
-        #print(clusters)
-        #print("vectors[x]:")
-        #print(vectors[x])
-        #print("Cluster centroid:")
-        #print(cluster_centroid)
         cluster = clusters[cluster_centroid]
-        #print("copia cluster preso in considerazione:")
-        #print(cluster)
         cluster = np.vstack((cluster, vectors[x]))
         clusters[cluster_centroid] = cluster
-        #clusters.insert(cluster_centroid, cluster)
-        #print("cluster dopo:")
-        #print(cluster)
-        #print("cluster centroid")
-        #print(cluster_centroid)
 
-        #calcolare nuovo centroide del cluster
-        #print("Clusters dopo:")
-        #print(clusters)
-
+        # Recomputing the new cluster centroid
         new_centroid = np.mean(cluster, dtype=np.float64, axis=0)
-        #print("New centroid")
-        #print(new_centroid)
-        #print(cluster_centroid)
         centroids[cluster_centroid] = new_centroid
-        #centroids = np.delete(centroids, cluster_centroid)
-        #np.insert(centroids, cluster_centroid, new_centroid)
-        #centroids = np.vstack((centroids, new_centroid))
 
-
-
+    # Creating a new cluster
     else:
-
         centroids = np.vstack((centroids, vectors[x]))
         cluster = np.array([vectors[x]])
         clusters.append(cluster)
 
 
-
+# Printing my centroids
 print("Array di centroidi")
 print(centroids)
 
+# Printing the number of my clusters
 print(clusters)
 print(len(clusters))
 
