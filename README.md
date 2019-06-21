@@ -27,8 +27,8 @@ The dataset ins also available in this repository. Validations with your dataset
 
 ## Data pipeline
 We process our dataset in this order:
-1. Import data from the .csv file;
-2. Preprocessing our tweets in order to remove punctuation, stop words and digits and to implement the stemming algorithm;
-3. Trasform the tweets in vectors in a space vector where the axis are the vocabulary terms and give to each vector a TF-IDF (Term Frequency and Inverted Document Frequency) weight;
-4. Cluster our tweets (now vectors) in main topics;
-5. Train a SVM classifier in order to distinguish the tweets in relevant and not relevant.
+1. **Import data** from the .csv file;
+2. **Preprocessing** our tweets in order to remove punctuation, stop words and digits and to implement the stemming algorithm;
+3. **Trasform the tweets in vectors** in a space vector where the axis are the vocabulary terms and give to each vector a TF-IDF (Term Frequency and Inverted Document Frequency) weight;
+4. **Cluster our tweets** (now vectors) in main topics;
+5. **Train a SVM classifier** in order to distinguish the tweets in relevant and not relevant.
