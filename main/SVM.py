@@ -20,9 +20,9 @@ def BuildNewStructureData(array_vectors,list_dataset):
         else:
             new_item[2]=0
         if(new_item[3]==0 | new_item[3]==3):
-            new_item[3]="Flood"
+            new_item[3]=0
         else:
-            new_item[3]="Eartquake"
+            new_item[3]=1
         Structure_data.append(new_item)
     print(Structure_data)
     return Structure_data
@@ -52,7 +52,7 @@ def SVMalgorithmKind(lists):
     print("Accuracy:", metrics.accuracy_score(y_test, y_pred))
     # Model Precision: what percentage of positive tuples are labeled as such?
     print("Precision element y:", metrics.precision_score(y_test, y_pred))
-
+    print("Eartquake->1 Flood->0")
     # Model Recall: what percentage of positive tuples are labelled as such?
     print("Recall:", metrics.recall_score(y_test, y_pred))
     return
