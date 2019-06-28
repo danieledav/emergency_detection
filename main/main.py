@@ -12,3 +12,4 @@ for x in range(len(data[1])):
 print(data[1])
 
 text2tfidf(data[1])
+

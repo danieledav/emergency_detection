@@ -5,6 +5,7 @@ from scipy.cluster.hierarchy import centroid, fcluster
 from import_csv import importCsv
 from tweet2vec import *
 from preprocessing import *
+import matplotlib.pyplot as plt
 
 # Importing my dataset from the file
 data = importCsv('/home/danieledavoli/emergency_detection/Cresci-SWDM15.csv')
@@ -20,6 +21,9 @@ print(data[1])
 # Rapresentig my tweets as vectors (TF-IDF weight)
 vectors = text2tfidf(data[1])
 
+data.append(vectors)
+
+
 # Test vectors
 # vectors = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1], [8.2, 0, 0], [0, 2, 0]])
 
@@ -31,6 +35,8 @@ cluster_centroid = 0
 centroids = np.array([vectors[0]])
 cluster = np.array([vectors[0]])
 clusters.append(cluster)
+
+data.append([0])
 
 # Printing init parameter values
 print("Init cluster:")
@@ -74,6 +80,8 @@ for x in range(1, len(vectors)):
         cluster = np.array([vectors[x]])
         clusters.append(cluster)
 
+    data[7].append(len(clusters)-1)
+
 
 # Printing my centroids
 print("Array di centroidi")
@@ -83,4 +91,50 @@ print(centroids)
 print(clusters)
 print(len(clusters))
 
+print(data)
+print(data[7])
 
+nnn = [[0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0]]
+
+for i in range (0, len(data[4])):
+    for j in range (0, 4):
+        if (data[4][i]==j):
+            if (data[7][i]==0):
+                nnn[j][0] = nnn[j][0] + 1
+            if (data[7][i]==1):
+                nnn[j][1] = nnn[j][1] + 1
+            if (data[7][i]==2):
+                nnn[j][2] = nnn[j][2] + 1
+            if (data[7][i]==3):
+                nnn[j][3] = nnn[j][3] + 1
+            if (data[7][i]==4):
+                nnn[j][4] = nnn[j][4] + 1
+
+print(nnn)
+
+
+
+'''
+#Plot the clusters obtained using Agglomerative clustering or Hierarchical clustering
+fig = plt.figure()
+ax = fig.add_subplot(111)
+scatter = ax.scatter(data[4], data[5],
+                     c=data[7], s=5)
+ax.set_title('Clustering')
+ax.set_xlabel('Disaster')
+ax.set_ylabel('Relevance')
+plt.colorbar(scatter)
+
+
+fig2 = plt.figure()
+ax = fig2.add_subplot(111)
+scatter = ax.scatter(data[4], data[6])
+ax.set_title('Clustering')
+ax.set_xlabel('Disaster')
+ax.set_ylabel('Cluster')
+plt.colorbar(scatter)
+'''
