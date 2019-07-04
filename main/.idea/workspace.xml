@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c401288d-b005-4c7d-aade-5c53e1045b2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +40,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1305">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="180">
+              <caret line="111" column="71" selection-start-line="111" selection-start-column="71" selection-end-line="111" selection-end-column="71" />
+              <folding>
+                <element signature="e#64#93#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="736">
+              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -295,7 +299,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.08604407" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.35257083" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.27806926" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.41593885" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -444,15 +448,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1305">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="180">
+          <caret line="111" column="71" selection-start-line="111" selection-start-column="71" selection-end-line="111" selection-end-column="71" />
+          <folding>
+            <element signature="e#64#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="736">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

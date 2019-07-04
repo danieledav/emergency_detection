@@ -41,13 +41,17 @@ print("Treshold: 0.95\t" + str(n_clusters5))
 dataset = BuildNewStructureData(vectors, data)
 
 # Training my SVM algorithm first with gamma=1 then with gamma=100
-SVMalgorithmKind(dataset, 0.05)
-SVMalgorithmKind(dataset, 0.09)
-SVMalgorithmKind(dataset, 1)
+#SVMalgorithmKind(dataset, 0.05)
+#SVMalgorithmKind(dataset, 0.09)
+#SVMalgorithmKind(dataset, 1)
 
 
 
 #BayesalgorithmKind(dataset)
-#SVMalgorithmRelevantNotRelevant(dataset)
+
+
+SVMalgorithmRelevantNotRelevant(dataset, 500)
+
+
 #BayesalgorithmRelevantNotRelevant(dataset)
 

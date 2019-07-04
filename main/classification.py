@@ -99,7 +99,7 @@ def SVMalgorithmKind(lists, gamma=1):
 
 
 
-def SVMalgorithmRelevantNotRelevant(lists):
+def SVMalgorithmRelevantNotRelevant(lists, gamma=1):
     vectors = list()
     target = list()
     for x in range(len(lists)):
@@ -109,8 +109,8 @@ def SVMalgorithmRelevantNotRelevant(lists):
 
 #Split the data into train and test sub-datasets.
     X_train, X_test, y_train, y_test = train_test_split(vectors,target, test_size=0.3,
-                                                        random_state=1)  # 70% training and 30% test
-    clf = svm.SVC(kernel='linear')
+                                                        random_state=50)  # 70% training and 30% test
+    clf = svm.SVC(kernel='linear', C=gamma)
     # Train the model using the training sets
     clf.fit(X_train, y_train)
 
