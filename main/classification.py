@@ -16,7 +16,7 @@ from matplotlib.colors import *
 import pandas as pd
 
 
-def BuildNewStructureData(array_vectors,list_dataset):
+def BuildNewStructureData(array_vectors, list_dataset):
     Structure_data = list()#list of items
 
 
