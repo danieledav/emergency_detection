@@ -32,3 +32,8 @@ We process our dataset in this order:
 3. **Trasform the tweets in vectors** in a space vector where the axis are the vocabulary terms and give to each vector a TF-IDF (Term Frequency and Inverted Document Frequency) weight;
 4. **Cluster our tweets** (now vectors) in main topics;
 5. **Train a SVM classifier** in order to distinguish the tweets in relevant and not relevant.
+
+## Authors
+- Danilo Marzilli - [Linkedin](https://www.linkedin.com/in/danilomarzilli/)
+- Andrea Lombardo - [Linkedin](https://www.linkedin.com/in/andrea-lombardo-2103ba15a/)
+- Daniele Davoli - [Linkedin](https://www.linkedin.com/in/danieledavoli/)
