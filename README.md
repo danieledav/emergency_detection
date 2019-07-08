@@ -6,9 +6,9 @@ The project wants to detect an emergency situation in real time through tweets f
 Link to the [Slideshare presentation](https://www.slideshare.net/DanieleDavoli/using-social-media-to-enhance-emergency-situation-awareness/DanieleDavoli/using-social-media-to-enhance-emergency-situation-awareness). Scientific paper on the repository.
 
 ## Authors
+- Daniele Davoli - [Linkedin profile](https://www.linkedin.com/in/danieledavoli/)
 - Danilo Marzilli - [Linkedin profile](https://www.linkedin.com/in/danilomarzilli/)
 - Andrea Lombardo - [Linkedin profile](https://www.linkedin.com/in/andrea-lombardo-2103ba15a/)
-- Daniele Davoli - [Linkedin profile](https://www.linkedin.com/in/danieledavoli/)
 
 ## Dataset
 For training and validating our machine learning system, we have used a [dataset](http://socialsensing.it/en/datasets) of 5,642 manually annotated tweets in the Italian language.
