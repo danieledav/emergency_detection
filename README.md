@@ -1,7 +1,14 @@
 # Using Social Media to Enhance Emergency Situation Awareness
-Project for the **Web Information Retrieval** course at La Sapienza, Università di Roma.
+Project for the **Web Information Retrieval** course at La Sapienza, Università di Roma held by Prof. Andrea Vitaletti and Prof. Luca Becchetti.
 
-The project wants to detect an emergency situation in real time throught tweets flow scanning.
+The project wants to detect an emergency situation in real time through tweets flow scanning using machine learning algorithms and users as sensors.
+
+Link to the [Slideshare presentation](https://www.slideshare.net/DanieleDavoli/using-social-media-to-enhance-emergency-situation-awareness/DanieleDavoli/using-social-media-to-enhance-emergency-situation-awareness). Scientific paper on the repository.
+
+## Authors
+- Danilo Marzilli - [Linkedin profile](https://www.linkedin.com/in/danilomarzilli/)
+- Andrea Lombardo - [Linkedin profile](https://www.linkedin.com/in/andrea-lombardo-2103ba15a/)
+- Daniele Davoli - [Linkedin profile](https://www.linkedin.com/in/danieledavoli/)
 
 ## Dataset
 For training and validating our machine learning system, we have used a [dataset](http://socialsensing.it/en/datasets) of 5,642 manually annotated tweets in the Italian language.
@@ -32,8 +39,3 @@ We process our dataset in this order:
 3. **Trasform the tweets in vectors** in a space vector where the axis are the vocabulary terms and give to each vector a TF-IDF (Term Frequency and Inverted Document Frequency) weight;
 4. **Cluster our tweets** (now vectors) in main topics;
 5. **Train a SVM classifier** in order to distinguish the tweets in relevant and not relevant.
-
-## Authors
-- Danilo Marzilli - [Linkedin](https://www.linkedin.com/in/danilomarzilli/)
-- Andrea Lombardo - [Linkedin](https://www.linkedin.com/in/andrea-lombardo-2103ba15a/)
-- Daniele Davoli - [Linkedin](https://www.linkedin.com/in/danieledavoli/)
